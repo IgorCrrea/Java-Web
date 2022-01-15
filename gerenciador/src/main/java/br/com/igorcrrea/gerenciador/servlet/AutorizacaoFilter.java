@@ -1,0 +1,53 @@
+package br.com.igorcrrea.gerenciador.servlet;
+
+import java.io.IOException;
+
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+
+//@WebFilter("/entrada")
+public class AutorizacaoFilter implements Filter {
+	
+	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain) throws IOException, ServletException {
+		
+		System.out.println("AutorizacaoFilter");
+		
+		HttpServletRequest request = (HttpServletRequest) servletRequest;
+		HttpServletResponse response = (HttpServletResponse) servletResponse;
+		boolean usuarioNaoLogado = false;
+		boolean ehUmaAcaoProtegida = false;
+		boolean isNull = false;
+		
+		String paramAcao = request.getParameter("acao");
+		
+		try {
+			HttpSession sessao = request.getSession();
+			usuarioNaoLogado = (sessao.getAttribute("usuarioLogado")== null);
+			ehUmaAcaoProtegida = !(paramAcao.equals("Login") ||paramAcao.equals("LoginForm"));
+		}catch(NullPointerException e){
+			isNull = true;
+		}
+				
+		if(ehUmaAcaoProtegida && usuarioNaoLogado|| isNull) {
+			response.sendRedirect("entrada?acao=LoginForm");
+			return;
+		}
+		
+		
+		chain.doFilter(request, response);
+		
+	}
+	
+	@Override
+	public void init(FilterConfig filterConfig) throws ServletException {}
+	@Override
+	public void destroy() {}
+}

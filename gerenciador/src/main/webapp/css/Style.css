@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
+
+#logout-a{  
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+	font-size: large; 
+}
+
+#logout-a:hover {
+	text-decoration: none;
+	background-color: #e2e2e2;
+	border-radius: 5px;
+	color: rgb(83, 83, 83);
+}  
+
+#form-body{
+    background: rgb(168, 204, 204);
+    
+}   
+#form-field{
+    width: 90vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}   
+
+#form-main-container{
+    background: white;
+    border-radius: 5px;
+    padding: 15px;
+    width: 400px;
+    height: 250px;
+    margin: auto;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.384);
+    text-align:center;
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(91, 175, 147);
+}
+
+#list-main-container{
+    background: white;
+    border-radius: 5px;
+    padding: 15px;
+    width: 400px;
+    height: 250px;
+    margin: auto;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.384);
+    font-family: 'Open Sans', sans-serif;
+    list-style-type: none;
+    color: rgb(91, 175, 147);
+}
+
+#formLogin{
+    font-weight: bold;
+}
+.btn{
+    border-radius: 10px;
+    background:cornflowerblue;
+    width: 150px;
+    align-self: center;
+    border: none;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 15px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 13px;
+    padding: 10px;
+}
+.btn-second {
+    background-color: #58af9b;
+    border: 1px solid #58af9b;
+    transition: background-color .5s;
+}
+.btn-second:hover {
+    background-color: #fff;
+    border: 1px solid #58af9b;
+    color: #58af9b;
+}
+
+.btn-primary {
+    background-color: #df6262;
+    border: 1px solid #af5858;
+    transition: background-color .5s;
+}
+.btn-primary:hover {
+    background-color: #fff;
+    border: 1px solid #af5858;
+    color: #af5858;
+}
+.lista-a{  
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+	font-size: small; 
+}
+
+.lista-a:hover {
+	text-decoration: none;
+	background-color: #e2e2e2;
+	border-radius: 5px;
+	color: rgb(83, 83, 83);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+li{
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+    border-radius: 10px;
+    align-items: center;
+    padding: 5px;
+    margin: 6px;
+    border: 1px solid;
+    background: #ffffff;
+}
+i{
+    color: black;
+}
+.i-remove:hover{
+    color: red;
+}
+.i-edita:hover{
+    color: blue;
+}
+
+/*.tooltiptext{
+    visibility: hidden;
+}
+  .i-edita:hover .tooltiptext {
+    visibility: visible;
+  }*/
+
+
